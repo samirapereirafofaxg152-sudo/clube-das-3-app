@@ -1,0 +1,17 @@
+CLUBE DAS 3 — versão PWA preparada 🦋
+
+Como testar:
+1. Extraia o ZIP.
+2. Para testar no computador, sirva a pasta por um servidor local (não basta abrir o HTML diretamente para recursos PWA).
+3. Para instalar no celular, publique a pasta num serviço de hospedagem HTTPS e abra o endereço no Chrome; depois use o menu do navegador e escolha "Instalar app" ou "Adicionar à tela inicial", conforme aparecer.
+
+Esta versão inclui:
+- Closet kawaii e acessórios
+- Presentinhos virtuais e medalhinhas
+- Chat, figurinhas, quiz, galeria, memórias e personagens
+- Arquivos básicos de PWA (manifesto, ícone e cache offline)
+
+Importante:
+- Ainda é um protótipo local. Os dados ficam no navegador/dispositivo.
+- O chat ainda não sincroniza mensagens entre celulares diferentes. Para isso, o próximo passo será integrar uma base online com autenticação e regras de acesso.
+- O PWA precisa estar hospedado em HTTPS para a instalação funcionar de forma confiável.

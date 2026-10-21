@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clube das 3 ✨</title>
+<style>
+:root{--bg:#fff8ff;--panel:#fff;--ink:#49345e;--muted:#927fa3;--purple:#8b5bd6;--pink:#ff8ec6;--lilac:#eee2ff;--line:#f0e4f6;--shadow:0 12px 35px #6d3f8e17}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(circle at 10% 0%,#f2e4ff 0,transparent 28%),radial-gradient(circle at 100% 20%,#ffe4f1 0,transparent 25%),var(--bg);color:var(--ink);min-height:100vh}
+button,input,textarea{font:inherit}button{cursor:pointer;border:0}
+.app{max-width:1120px;margin:auto;padding:20px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.brand{display:flex;gap:12px;align-items:center}.logo{width:54px;height:54px;border-radius:18px;background:linear-gradient(135deg,#a77beb,#ff9acb);display:grid;place-items:center;font-size:27px;box-shadow:var(--shadow)}h1{font-size:clamp(22px,4vw,32px);margin:0}.sub{font-size:13px;color:var(--muted)}.top-actions{display:flex;gap:8px;flex-wrap:wrap}.pill{background:#fff;border:1px solid var(--line);border-radius:99px;padding:9px 13px;color:var(--ink);box-shadow:0 4px 12px #6d3f8e0b}
+.layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:18px}.side,.main{background:#ffffffd9;border:1px solid #fff;border-radius:25px;box-shadow:var(--shadow);padding:18px;min-width:0}.side h2,.section-title{font-size:17px;margin:0 0 13px}.friend{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:transparent;border-radius:17px;padding:10px;margin:5px 0;color:var(--ink)}.friend.active,.friend:hover{background:var(--lilac)}.avatar{width:44px;height:44px;border-radius:15px;display:grid;place-items:center;font-size:24px;flex-shrink:0}.av1{background:#f7d8ed}.av2{background:#ded4ff}.av3{background:#d3efff}.friend small{display:block;color:var(--muted);font-size:11px;margin-top:2px}.divider{height:1px;background:var(--line);margin:16px 0}.navbtn{display:flex;align-items:center;gap:10px;width:100%;padding:11px 12px;background:transparent;color:var(--ink);border-radius:13px;text-align:left;margin:4px 0}.navbtn.active,.navbtn:hover{background:#fff0f8}.tiny{font-size:12px;color:var(--muted);line-height:1.5}.main{min-height:650px}.view{display:none}.view.active{display:block}.hero{background:linear-gradient(120deg,#f0e5ff,#ffe8f3);border-radius:21px;padding:22px;margin-bottom:18px;position:relative;overflow:hidden}.hero:after{content:"🦋";position:absolute;right:18px;top:12px;font-size:50px;opacity:.55;transform:rotate(15deg)}.hero h2{margin:0 50px 6px 0;font-size:23px}.hero p{margin:0;color:#806c93;font-size:14px;max-width:520px}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:15px;min-width:0}.card .big{font-size:28px}.card h3{margin:7px 0 4px;font-size:15px}.card p{margin:0;font-size:12px;color:var(--muted);line-height:1.45}.primary{background:linear-gradient(120deg,var(--purple),#b67be8);color:white;border-radius:13px;padding:11px 15px;font-weight:650;box-shadow:0 6px 15px #8b5bd633}.soft{background:#f7edff;color:#704e9a;border-radius:12px;padding:9px 12px}.pink{background:#fff0f8;color:#a24f83;border-radius:12px;padding:9px 12px}.chathead{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)}.chathead h2{margin:0;font-size:20px}.chathead p{margin:2px 0 0;color:var(--muted);font-size:12px}.messages{height:355px;overflow:auto;padding:16px 4px;display:flex;flex-direction:column;gap:10px}.bubble{max-width:78%;padding:11px 13px;border-radius:17px;background:#f1e8ff;align-self:flex-start;overflow-wrap:anywhere}.bubble.mine{align-self:flex-end;background:#ffe5f2}.bubble .who{font-size:10px;color:#967aa9;margin-bottom:4px}.bubble img{display:block;max-width:210px;max-height:200px;border-radius:12px;margin-top:5px}.bubble .time{font-size:10px;color:#9b86a7;text-align:right;margin-top:4px}.composer{display:flex;gap:8px;align-items:flex-end;border-top:1px solid var(--line);padding-top:12px}.composer textarea{resize:vertical;min-height:44px;max-height:100px;flex:1;border:1px solid var(--line);border-radius:14px;padding:11px;outline-color:#c5a3f0;background:#fff;color:var(--ink)}.toolrow{display:flex;gap:6px;flex-wrap:wrap;margin:9px 0}.sticker{font-size:25px;background:#fff7fc;border:1px solid var(--line);border-radius:12px;padding:6px 9px}.quizbox{background:#fff;border:1px solid var(--line);padding:18px;border-radius:20px;margin:12px 0}.answers{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:15px}.answer{background:#f8f0ff;color:var(--ink);padding:12px;border-radius:13px;text-align:left;border:1px solid transparent}.answer:hover{border-color:#c4a3ed}.answer.correct{background:#e1f8e9;border-color:#a2dbb2}.answer.wrong{background:#ffe6ef;border-color:#ffb5ce}.progress{height:8px;background:#f0e4f7;border-radius:99px;overflow:hidden;margin:12px 0}.progress div{height:100%;background:linear-gradient(90deg,#9a69df,#ff91c8);width:0}.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.photo-tile{background:#fff;border:1px dashed #d7bde9;border-radius:16px;min-height:120px;display:grid;place-items:center;padding:8px;overflow:hidden}.photo-tile img{width:100%;height:130px;object-fit:cover;border-radius:10px}.photo-tile p{font-size:12px;color:var(--muted);margin:5px;text-align:center}.input{width:100%;padding:11px;border:1px solid var(--line);border-radius:12px;margin:5px 0 12px;outline-color:#c5a3f0;color:var(--ink);background:#fff}.profile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.profile-card{border:1px solid var(--line);border-radius:18px;padding:15px;background:white}.profile-card .avatar{width:64px;height:64px;font-size:34px;border-radius:21px;margin-bottom:8px}.profile-card input{margin-top:8px}.note{background:#fff8e8;color:#896d40;border-radius:14px;padding:12px;font-size:12px;line-height:1.5;margin-top:14px}.empty{text-align:center;color:var(--muted);padding:35px 10px}.footer{text-align:center;color:#a08bad;font-size:11px;padding:18px 0 5px}
+
+.entry-screen{position:fixed;inset:0;z-index:1000;background:radial-gradient(circle at 15% 10%,#f3e3ff,transparent 32%),radial-gradient(circle at 90% 20%,#ffe1f0,transparent 28%),linear-gradient(145deg,#fff9ff,#f7efff);display:flex;align-items:center;justify-content:center;padding:20px;overflow:auto}
+.entry-screen.hidden{display:none}.entry-box{width:min(900px,100%);text-align:center;background:#ffffffd9;border:1px solid #fff;border-radius:30px;padding:clamp(20px,4vw,38px);box-shadow:0 18px 60px #6d3f8e20}
+.entry-logo{font-size:40px;margin-bottom:5px}.entry-box h1{color:#7950b8;font-size:clamp(28px,5vw,42px)}.entry-sub{color:#927fa3;margin:8px auto 22px;max-width:520px}
+.entry-characters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0}
+.entry-character{border:2px solid transparent;background:white;border-radius:23px;padding:18px 10px;color:var(--ink);box-shadow:0 8px 20px #7a4c9b12;transition:.18s}
+.entry-character:hover,.entry-character:focus{transform:translateY(-4px);border-color:#d5b6f5;background:#fff8ff;outline:none}
+.entry-doll{width:clamp(74px,13vw,112px);height:clamp(74px,13vw,112px);border-radius:35%;display:grid;place-items:center;margin:0 auto 12px;font-size:clamp(40px,7vw,62px);box-shadow:inset 0 -7px 0 #00000008}
+.doll-samira{background:linear-gradient(145deg,#ead8ff,#c7a4f4)}.doll-ariela{background:linear-gradient(145deg,#ffe0f0,#ffadd4)}.doll-eshiley{background:linear-gradient(145deg,#d9f2ff,#9fdcff)}
+.entry-character b{display:block;font-size:20px}.entry-character small{display:block;color:var(--muted);margin-top:5px;font-size:12px}
+.entry-hint{font-size:12px;color:#9a86a8;margin-top:18px;line-height:1.5}
+@media(max-width:520px){.entry-characters{gap:8px}.entry-character{padding:14px 5px;border-radius:18px}.entry-character b{font-size:16px}.entry-character small{font-size:10px}.entry-box{border-radius:23px}}
+
+
+.appearance-box{background:linear-gradient(135deg,#fff8fd,#f5efff);border:1px solid var(--line);border-radius:18px;padding:12px;margin-top:10px}
+.appearance-preview{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.appearance-face{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;font-size:28px;border:3px solid #fff;box-shadow:0 3px 12px #6d3f8e14}
+.appearance-preview b{display:block}.appearance-preview small{color:var(--muted);font-size:11px}
+.appearance-box select{width:100%;padding:9px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);margin:4px 0 9px}
+
+
+.look-option{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;text-align:center;color:var(--ink)}
+.look-option.selected{border:2px solid #b58be8;background:#fbf5ff}
+.look-option .big{font-size:30px}.gift-option{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;text-align:center;color:var(--ink)}.gift-option.selected{border:2px solid #ff9acb;background:#fff5fa}
+.gift-entry{display:flex;gap:12px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:15px;background:#fff;margin:8px 0}.gift-entry .gift-emoji{font-size:30px}.medal{background:linear-gradient(135deg,#fff8e8,#fff0fa);border:1px solid #f5dfef;border-radius:16px;padding:14px;text-align:center}.medal .big{font-size:30px}
+@media(max-width:760px){.app{padding:12px}.layout{grid-template-columns:1fr}.side{padding:13px}.friends{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}.friend{padding:8px 5px;display:flex;flex-direction:column;text-align:center;gap:5px;margin:0}.friend small{display:none}.side h2{margin-bottom:8px}.side .divider,.side .tiny{display:none}.navs{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}.navbtn{justify-content:center;font-size:12px;padding:9px 3px;gap:4px}.main{padding:14px;min-height:550px}.cards{grid-template-columns:1fr}.profile-grid{grid-template-columns:1fr}.photo-grid{grid-template-columns:repeat(2,1fr)}.messages{height:330px}.top{align-items:flex-start}.top-actions .pill{padding:8px 10px;font-size:12px}.answers{grid-template-columns:1fr}}
+</style>
+<meta name="theme-color" content="#f5e8ff">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+</head>
+<body>
+<div class="entry-screen" id="entryScreen">
+ <div class="entry-box">
+  <div class="entry-logo">🦋 💌 🎀</div>
+  <h1>Clube das 3</h1>
+  <div class="entry-sub">Escolha sua bonequinha para entrar no nosso cantinho de amizade!<br>Três amigas, uma amizade gigante. 💗</div>
+  <div class="entry-characters">
+   <button class="entry-character" data-enter="0"><div class="entry-doll doll-samira">🦋</div><b>Samira</b><small>💜 Borboletinha sonhadora</small></button>
+   <button class="entry-character" data-enter="1"><div class="entry-doll doll-ariela">🎀</div><b>Ariela</b><small>💗 Bonequinha encantada</small></button>
+   <button class="entry-character" data-enter="2"><div class="entry-doll doll-eshiley">🧸</div><b>Eshiley</b><small>💙 Ursinha brilhante</small></button>
+  </div>
+  <div class="entry-hint">Toque na sua personagem para entrar ✨<br>Esta seleção é um protótipo visual; ainda não é uma conta privada nem sincroniza mensagens entre celulares.</div>
+ </div>
+</div>
+<div class="app">
+<header class="top">
+ <div class="brand"><div class="logo">💌</div><div><h1>Clube das 3 <span>✨</span></h1><div class="sub">três bonequinhas kawaii, uma amizade gigante 🦋</div></div></div>
+ <div class="top-actions"><button class="pill" id="changeMe">👤 Quem está usando?</button><button class="pill" id="resetBtn">↻</button></div>
+</header>
+<div class="layout">
+<aside class="side">
+ <h2>Nosso trio 💗</h2>
+ <div class="friends" id="friends"></div>
+ <div class="divider"></div>
+ <h2>Nosso cantinho</h2>
+ <div class="navs">
+  <button class="navbtn active" data-view="home">🏡 Início</button>
+  <button class="navbtn" data-view="chat">💬 Chat</button>
+  <button class="navbtn" data-view="quiz">🎀 Quizzes</button>
+  <button class="navbtn" data-view="photos">📸 Fotos</button>
+  <button class="navbtn" data-view="memories">📖 Memórias</button>
+  <button class="navbtn" data-view="settings">🪄 Personagens</button>
+  <button class="navbtn" data-view="closet">👗 Closet</button>
+  <button class="navbtn" data-view="gifts">🎁 Presentes & medalhas</button>
+ </div>
+ <p class="tiny" style="margin-top:15px">Feito de carinho, risadas e um pouquinho de glitter. ✨</p>
+</aside>
+<main class="main">
+<section class="view active" id="home">
+ <div class="hero"><h2>Oi, besties! 💕</h2><p>Um lugar fofinho para guardar conversas, fotos, brincadeiras e lembranças do nosso trio.</p></div>
+ <div class="cards">
+  <div class="card"><div class="big">💬</div><h3>Chat das amigas</h3><p>Mandem mensagens, emojis e figurinhas divertidas.</p><button class="soft" style="margin-top:12px" data-goto="chat">Abrir chat →</button></div>
+  <div class="card"><div class="big">🧠</div><h3>Quiz de amizade</h3><p>Descubram o quanto vocês conhecem umas às outras.</p><button class="soft" style="margin-top:12px" data-goto="quiz">Jogar →</button></div>
+  <div class="card"><div class="big">📸</div><h3>Galeria do trio</h3><p>Guardem fotos e momentos especiais neste dispositivo.</p><button class="soft" style="margin-top:12px" data-goto="photos">Ver fotos →</button></div>
+  <div class="card"><div class="big">👗</div><h3>Closet kawaii</h3><p>Montem looks fofinhos para cada bonequinha.</p><button class="soft" style="margin-top:12px" data-goto="closet">Abrir closet →</button></div>
+  <div class="card"><div class="big">🎁</div><h3>Presentes de amizade</h3><p>Enviem mimos virtuais e desbloqueiem medalhinhas.</p><button class="soft" style="margin-top:12px" data-goto="gifts">Ver mimos →</button></div>
+ </div>
+ <div class="divider"></div><h2 class="section-title">Nosso mural de carinho 💌</h2>
+ <div class="card"><p id="dailyQuote" style="font-size:15px;color:#76528f">“Amizade é ter com quem dividir até as ideias mais doidinhas.” 🦋</p><button class="pink" id="newQuote">Outra frase fofinha ✨</button></div>
+ <div class="note">🌷 <b>Um recadinho:</b> esta primeira versão salva as conversas e fotos neste navegador/dispositivo. Para amigas conversarem de celulares diferentes em tempo real, depois precisamos conectar o app a um serviço online.</div>
+</section>
+<section class="view" id="chat">
+ <div class="chathead"><div class="avatar av2">💌</div><div><h2>Chat do trio</h2><p>Conversa entre as três besties ✨</p></div></div>
+ <div class="toolrow" id="stickerRow"><span class="tiny" style="align-self:center">Figurinhas:</span></div>
+ <div class="messages" id="messages"></div>
+ <div class="composer"><label class="soft" title="Enviar foto" style="cursor:pointer">📷<input type="file" id="chatPhoto" accept="image/*" hidden></label><textarea id="messageInput" placeholder="Escreva um recadinho, bestie..."></textarea><button class="primary" id="sendBtn">Enviar 💗</button></div>
+ <p class="tiny">Dica: escolha quem está usando no botão lá em cima antes de mandar a mensagem.</p>
+</section>
+<section class="view" id="quiz">
+ <div class="hero"><h2>Quiz: besties de verdade? 🎀</h2><p>Responda juntinhas e descubram o resultado do trio!</p></div>
+ <div id="quizArea"></div>
+</section>
+<section class="view" id="photos">
+ <div class="hero"><h2>Galeria das memórias 📸</h2><p>Adicione fotos especiais. Elas ficam guardadas neste navegador.</p></div>
+ <label class="primary" style="display:inline-block;cursor:pointer">＋ Adicionar fotos <input type="file" id="galleryUpload" accept="image/*" multiple hidden></label>
+ <div class="photo-grid" id="gallery" style="margin-top:15px"></div>
+</section>
+<section class="view" id="memories">
+ <div class="hero"><h2>Livro de memórias 📖</h2><p>Uma frase, uma data, uma lembrança que merece ficar para sempre.</p></div>
+ <input class="input" id="memoryTitle" placeholder="Título da lembrança (ex.: nosso dia mais engraçado)">
+ <textarea class="input" id="memoryText" rows="3" placeholder="Conta aqui o que aconteceu..."></textarea>
+ <button class="primary" id="saveMemory">Guardar memória 💞</button>
+ <div id="memoryList" style="margin-top:15px"></div>
+</section>
+<section class="view" id="settings">
+ <div class="hero"><h2>As bonequinhas do nosso trio 🪄</h2><p>Personalizem nomes, tons de pele, cabelos, penteados, emojis e apelidos para cada bonequinha ficar com a carinha da sua dona!</p></div>
+ <div class="profile-grid" id="profileEditor"></div>
+ <button class="primary" id="saveProfiles" style="margin-top:14px">Salvar personagens ✨</button>
+ <div class="note">Os nomes abaixo são só sugestões! Troquem pelos nomes das três amigas. Não coloquem endereço, senha ou outras informações pessoais.</div>
+</section>
+<section class="view" id="closet">
+ <div class="hero"><h2>Closet das bonequinhas 👗✨</h2><p>Escolham looks, penteados e acessórios para deixar cada personagem com a sua carinha!</p></div>
+ <div class="card"><label class="tiny">Quem vai montar o look?</label><select class="input" id="closetPerson"></select><div class="appearance-box"><div class="appearance-preview"><div class="appearance-face" id="closetPreview">👗</div><div><b id="closetName">Sua bonequinha</b><small>Look atual salvo no dispositivo</small></div></div></div>
+ <div class="section-title">Roupinhas 💕</div><div class="cards" id="outfitChoices"></div>
+ <div class="section-title" style="margin-top:18px">Acessórios ✨</div><div class="toolrow" id="accessoryChoices"></div>
+ <button class="primary" id="saveLook" style="margin-top:12px">Salvar look 💖</button><p class="tiny" id="lookSaved"></p></div>
+ <div class="note">🎨 Nesta versão, os looks aparecem como combinações de emojis e cores. As bonequinhas ilustradas com roupas desenhadas podem entrar numa atualização visual futura.</div>
+</section>
+<section class="view" id="gifts">
+ <div class="hero"><h2>Correio do carinho 🎁💌</h2><p>Escolha um presentinho virtual para uma das besties e colecione medalhas de amizade.</p></div>
+ <div class="card"><label class="tiny">De quem?</label><select class="input" id="giftFrom"></select><label class="tiny">Para quem?</label><select class="input" id="giftTo"></select><div class="cards" id="giftChoices"></div><label class="tiny">Recadinho (opcional)</label><input class="input" id="giftNote" maxlength="90" placeholder="Ex.: obrigada por sempre me fazer rir 💗"><button class="primary" id="sendGift">Enviar presentinho 🎀</button><p class="tiny" id="giftFeedback"></p></div>
+ <div class="divider"></div><h2 class="section-title">Presentes recebidos e enviados 💝</h2><div id="giftHistory"></div>
+ <div class="divider"></div><h2 class="section-title">Medalhinhas do trio 🏅</h2><div class="cards" id="medalGrid"></div>
+ <div class="note">💌 Os presentes e medalhas ficam salvos neste navegador/dispositivo. Eles ainda não são enviados para os celulares das outras amigas; para isso, o app precisa de um serviço online compartilhado.</div>
+</section>
+</main>
+</div>
+<div class="footer">Clube das 3 • amizade em tons de lilás, rosa e céu azul 🦋</div>
+</div>
+<script>
+const defaults=[
+ {name:"Samira",nick:"A borboletinha sonhadora",emoji:"🦋",cls:"av1",skin:"medium",hair:"curly"},
+ {name:"Ariela",nick:"A bonequinha encantada",emoji:"🎀",cls:"av2",skin:"light",hair:"long"},
+ {name:"Eshiley",nick:"A ursinha brilhante",emoji:"🧸",cls:"av3",skin:"tan",hair:"wavy"}
+];
+const get=(k,d)=>{try{return JSON.parse(localStorage.getItem("clube3_"+k))??d}catch(e){return d}};
+const put=(k,v)=>localStorage.setItem("clube3_"+k,JSON.stringify(v));
+let friends=get("friends",defaults), current=Number(get("current",0)), msgs=get("msgs",[]), photos=get("photos",[]), memories=get("memories",[]);
+const stickers=["🦋","💗","🎀","🐰","🐱","🧸","✨","😭💗","KKKK 😂","🫶","💌","🌷","💅","💖"];
+const questions=[
+ {q:"Qual é o ingrediente secreto de uma amizade boa?",a:["Confiança e carinho","Competição o tempo todo","Nunca conversar"],c:0,why:"Amizade cresce com respeito, confiança e carinho! 💗"},
+ {q:"Se uma amiga estiver tristinha, o que podemos fazer?",a:["Zombar dela","Ouvir e oferecer apoio","Ignorar sempre"],c:1,why:"Escutar sem julgar já pode ajudar muito. 🫶"},
+ {q:"O que combina com o nosso trio?",a:["Guardar rancor para sempre","Só falar quando precisa","Rir, apoiar e respeitar as diferenças"],c:2,why:"Cada amiga é diferente, e isso deixa o trio especial! 🦋"},
+ {q:"Uma amizade saudável precisa de...",a:["Respeito aos limites","Senha de todas as contas","Estar juntas 24 horas"],c:0,why:"Amigas também têm privacidade e precisam respeitar os limites umas das outras. 🌷"},
+ {q:"Qual seria o melhor plano para um dia de amigas?",a:["Fazer algo divertido que todas curtam","Obrigar alguém a fazer o que não quer","Competir para ver quem é melhor"],c:0,why:"O melhor plano é aquele em que todas se sentem bem! 🎀"},
+ {q:"Quando acontece um mal-entendido, é melhor...",a:["Espalhar fofoca","Conversar com calma","Bloquear sem explicar sempre"],c:1,why:"Conversar com respeito ajuda a entender o lado de cada uma. 💌"}
+];
+let qIndex=0,score=0,answered=false;
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function renderFriends(){document.getElementById("friends").innerHTML=friends.map((f,i)=>`<button class="friend ${i===current?'active':''}" data-person="${i}"><span class="avatar ${f.cls}">${esc(f.emoji)}</span><span><b>${esc(f.name)}</b><small>${esc(f.nick)}</small></span></button>`).join("");document.querySelectorAll("[data-person]").forEach(b=>b.onclick=()=>{current=+b.dataset.person;put("current",current);renderFriends();renderMessages()})}
+function showView(id){document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===id));document.querySelectorAll(".navbtn").forEach(b=>b.classList.toggle("active",b.dataset.view===id));if(id==="chat")renderMessages();if(id==="photos")renderGallery();if(id==="memories")renderMemories();if(id==="settings")renderProfileEditor();if(id==="quiz")renderQuiz();if(id==="closet")renderCloset();if(id==="gifts")renderGifts()}
+document.querySelectorAll(".navbtn").forEach(b=>b.onclick=()=>showView(b.dataset.view));
+document.querySelectorAll("[data-goto]").forEach(b=>b.onclick=()=>showView(b.dataset.goto));
+function renderMessages(){const el=document.getElementById("messages");el.innerHTML=msgs.length?msgs.map(m=>`<div class="bubble ${m.from===current?'mine':''}"><div class="who">${esc(friends[m.from]?.name||"Amiga")}</div>${m.text?`<div>${esc(m.text).replace(/\n/g,"<br>")}</div>`:""}${m.img?`<img src="${m.img}" alt="Foto enviada">`:""}<div class="time">${esc(m.time||"agora")}</div></div>`).join(""):`<div class="empty">💌<br><b>O chat está esperando a primeira mensagem!</b><br>Seja a primeira a mandar um oi, bestie.</div>`;el.scrollTop=el.scrollHeight}
+function send(text,img){if(!text.trim()&&!img)return;msgs.push({from:current,text:text.trim(),img:img||"",time:new Date().toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit"})});put("msgs",msgs);document.getElementById("messageInput").value="";renderMessages()}
+document.getElementById("sendBtn").onclick=()=>send(document.getElementById("messageInput").value);
+document.getElementById("messageInput").addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();send(e.target.value)}});
+document.getElementById("stickerRow").innerHTML='<span class="tiny" style="align-self:center">Figurinhas:</span>'+stickers.map(s=>`<button class="sticker" data-sticker="${esc(s)}">${esc(s)}</button>`).join("");
+document.querySelectorAll("[data-sticker]").forEach(b=>b.onclick=()=>send(b.dataset.sticker));
+function imageToData(file,callback){const r=new FileReader();r.onload=()=>callback(r.result);r.readAsDataURL(file)}
+document.getElementById("chatPhoto").onchange=e=>{const f=e.target.files[0];if(f)imageToData(f,data=>send("",data));e.target.value=""};
+function renderQuiz(){const area=document.getElementById("quizArea");if(qIndex>=questions.length){area.innerHTML=`<div class="quizbox" style="text-align:center"><div style="font-size:52px">🏆</div><h2>Quiz finalizado!</h2><p>Vocês acertaram <b>${score} de ${questions.length}</b> perguntas.</p><p>${score>=5?"Trio de milhões! 💖":score>=3?"Uma amizade cheia de potencial! 🦋":"Hora de conversar e se conhecer ainda mais! 💌"}</p><button class="primary" id="restartQuiz">Jogar de novo ✨</button></div>`;document.getElementById("restartQuiz").onclick=()=>{qIndex=0;score=0;renderQuiz()};return}
+const q=questions[qIndex];area.innerHTML=`<div class="tiny">Pergunta ${qIndex+1} de ${questions.length}</div><div class="progress"><div style="width:${qIndex/questions.length*100}%"></div></div><div class="quizbox"><h2>${q.q}</h2><div class="answers">${q.a.map((a,i)=>`<button class="answer" data-answer="${i}">${esc(a)}</button>`).join("")}</div><p id="feedback" class="tiny" style="margin-top:14px"></p><button id="nextQ" class="primary" style="display:none;margin-top:8px">Próxima →</button></div>`;
+document.querySelectorAll("[data-answer]").forEach(b=>b.onclick=()=>{if(answered)return;answered=true;const n=+b.dataset.answer;if(n===q.c)score++;document.querySelectorAll("[data-answer]").forEach(x=>{x.disabled=true;if(+x.dataset.answer===q.c)x.classList.add("correct");else if(x===b)x.classList.add("wrong")});document.getElementById("feedback").textContent=q.why;document.getElementById("nextQ").style.display="inline-block";document.getElementById("nextQ").onclick=()=>{qIndex++;answered=false;renderQuiz()}})}
+document.getElementById("galleryUpload").onchange=e=>{[...e.target.files].forEach(file=>imageToData(file,data=>{photos.unshift({img:data,caption:file.name.replace(/\.[^.]+$/,"")});put("photos",photos);renderGallery()}));e.target.value=""};
+function renderGallery(){document.getElementById("gallery").innerHTML=photos.length?photos.map((p,i)=>`<div class="photo-tile"><img src="${p.img}" alt="Foto da amizade"><p>${esc(p.caption||"Momento especial")}</p><button class="pink" data-delphoto="${i}">Remover</button></div>`).join(""):`<div class="empty" style="grid-column:1/-1">📷<br>A galeria ainda está vazia.<br>Adicionem uma foto especial!</div>`;document.querySelectorAll("[data-delphoto]").forEach(b=>b.onclick=()=>{photos.splice(+b.dataset.delphoto,1);put("photos",photos);renderGallery()})}
+document.getElementById("saveMemory").onclick=()=>{const title=document.getElementById("memoryTitle").value.trim(),body=document.getElementById("memoryText").value.trim();if(!title&&!body){alert("Escreva pelo menos um pedacinho da lembrança 💗");return}memories.unshift({title:title||"Uma lembrança",body,date:new Date().toLocaleDateString("pt-BR")});put("memories",memories);document.getElementById("memoryTitle").value="";document.getElementById("memoryText").value="";renderMemories()};
+function renderMemories(){document.getElementById("memoryList").innerHTML=memories.length?memories.map((m,i)=>`<div class="card" style="margin-bottom:10px"><div class="tiny">${esc(m.date)}</div><h3>${esc(m.title)}</h3><p style="font-size:14px;margin:8px 0">${esc(m.body)}</p><button class="pink" data-delm="${i}">Apagar lembrança</button></div>`).join(""):`<div class="empty">📖<br>Nenhuma lembrança guardada ainda.</div>`;document.querySelectorAll("[data-delm]").forEach(b=>b.onclick=()=>{memories.splice(+b.dataset.delm,1);put("memories",memories);renderMemories()})}
+const skinOptions={light:{label:"Pele clarinha",color:"#f8d9c7"},medium:{label:"Pele morena",color:"#c98962"},tan:{label:"Pele bronzeada",color:"#a96843"},deep:{label:"Pele retinta",color:"#70412f"},brown:{label:"Pele marrom quente",color:"#8d573d"}};
+const hairOptions={long:{label:"Cabelo longo",icon:"👩🏻"},curly:{label:"Cabelo cacheado",icon:"👩🏽‍🦱"},wavy:{label:"Cabelo ondulado",icon:"👩🏾"},short:{label:"Cabelo curtinho",icon:"👩🏻‍🦰"},braids:{label:"Trancinhas",icon:"👧🏽"},bun:{label:"Coque fofo",icon:"👩🏼"}};
+function renderProfileEditor(){document.getElementById("profileEditor").innerHTML=friends.map((f,i)=>{const sk=skinOptions[f.skin]||skinOptions.medium;const hair=hairOptions[f.hair]||hairOptions.long;return `<div class="profile-card"><div class="appearance-box"><div class="appearance-preview"><div class="appearance-face" id="preview${i}" style="background:${sk.color}">${hair.icon}</div><div><b>${esc(f.name)}</b><small>Prévia da sua bonequinha ✨</small></div></div><label class="tiny">Tom de pele</label><select id="pskin${i}">${Object.entries(skinOptions).map(([k,v])=>`<option value="${k}" ${k===(f.skin||"medium")?"selected":""}>${v.label}</option>`).join("")}</select><label class="tiny">Cabelo / penteado</label><select id="phair${i}">${Object.entries(hairOptions).map(([k,v])=>`<option value="${k}" ${k===(f.hair||"long")?"selected":""}>${v.label}</option>`).join("")}</select></div><label class="tiny">Nome da amiga</label><input class="input" id="pname${i}" value="${esc(f.name)}" maxlength="22"><label class="tiny">Apelido</label><input class="input" id="pnick${i}" value="${esc(f.nick)}" maxlength="30"><label class="tiny">Emoji/personagem</label><input class="input" id="pemoji${i}" value="${esc(f.emoji)}" maxlength="4"></div>`}).join("");
+friends.forEach((f,i)=>{const update=()=>{const sk=skinOptions[document.getElementById("pskin"+i).value];const hair=hairOptions[document.getElementById("phair"+i).value];const prev=document.getElementById("preview"+i);prev.style.background=sk.color;prev.textContent=hair.icon};document.getElementById("pskin"+i).onchange=update;document.getElementById("phair"+i).onchange=update})}
+document.getElementById("saveProfiles").onclick=()=>{friends=friends.map((f,i)=>({...f,name:document.getElementById("pname"+i).value.trim()||"Bestie",nick:document.getElementById("pnick"+i).value.trim()||"Amiga especial",emoji:document.getElementById("pemoji"+i).value.trim()||"💗",skin:document.getElementById("pskin"+i).value,hair:document.getElementById("phair"+i).value}));put("friends",friends);renderFriends();renderProfileEditor();alert("Personagens salvas com sucesso! 🦋")};
+document.getElementById("changeMe").onclick=()=>{const names=friends.map((f,i)=>`${i+1} — ${f.name}`).join("\n");const answer=prompt("Quem está usando agora? Digite o número:\n"+names,String(current+1));if(answer!==null){const n=Number(answer)-1;if(Number.isInteger(n)&&n>=0&&n<3){current=n;put("current",current);renderFriends();renderMessages()}else alert("Escolha 1, 2 ou 3, bestie 💗")}};
+const quotes=["“Amizade é ter com quem dividir até as ideias mais doidinhas.” 🦋","“Três corações, mil histórias e risadas sem fim.” 💗","“Besties não precisam ser iguais; precisam se respeitar.” 🌷","“Que nunca faltem carinho, sinceridade e KKKKK no nosso chat.” 😂","“Uma amiga de verdade comemora seu brilho sem apagar o próprio.” ✨"];
+document.getElementById("newQuote").onclick=()=>document.getElementById("dailyQuote").textContent=quotes[Math.floor(Math.random()*quotes.length)];
+document.getElementById("resetBtn").onclick=()=>{if(confirm("Apagar mensagens, fotos e memórias salvas neste navegador? As personagens não serão apagadas.")){msgs=[];photos=[];memories=[];gifts=[];put("msgs",msgs);put("photos",photos);put("memories",memories);put("gifts",gifts);renderMessages();renderGallery();renderMemories()}};
+
+const looks=[
+ {id:"princess",name:"Princesinha pastel",emoji:"👗",color:"#f8dff0",desc:"Rosa, delicado e cheio de laços"},
+ {id:"butterfly",name:"Fada das borboletas",emoji:"🧚‍♀️",color:"#e9dcff",desc:"Lilás mágico com brilho"},
+ {id:"sky",name:"Sonho azul",emoji:"🩵",color:"#dff4ff",desc:"Azul clarinho e nuvens"},
+ {id:"kitty",name:"Kawaii de laços",emoji:"🎀",color:"#fff0f7",desc:"Fofo e divertido"},
+ {id:"star",name:"Estrelinha pop",emoji:"🌟",color:"#fff1c9",desc:"Brilhinhos e energia"}
+];
+const accessories=["🦋","🎀","🌷","✨","👑","💖","🐰","⭐","🧸","💎"];
+const giftsList=[{id:"flower",emoji:"💐",name:"Buquê de carinho"},{id:"cake",emoji:"🍰",name:"Bolo de besties"},{id:"crown",emoji:"👑",name:"Coroa de rainha"},{id:"teddy",emoji:"🧸",name:"Ursinho abraço"},{id:"butterfly",emoji:"🦋",name:"Borboleta da sorte"},{id:"heart",emoji:"💌",name:"Cartinha do coração"}];
+let savedLooks=get("looks",{}), selectedLook="princess", selectedAccessory="🦋";
+let gifts=get("gifts",[]);
+function fillPeopleSelect(id,includeAll=false){const el=document.getElementById(id);if(!el)return;el.innerHTML=friends.map((f,i)=>`<option value="${i}">${esc(f.name)}</option>`).join("")}
+function renderCloset(){
+ fillPeopleSelect("closetPerson");
+ const person=document.getElementById("closetPerson"), idx=Number(person.value||current), saved=savedLooks[idx]||{look:"princess",accessory:"🦋"};
+ selectedLook=saved.look;selectedAccessory=saved.accessory;
+ const draw=()=>{const f=friends[Number(person.value||0)], look=looks.find(x=>x.id===selectedLook)||looks[0];document.getElementById("closetName").textContent=f.name+" — "+look.name;document.getElementById("closetPreview").textContent=look.emoji+" "+selectedAccessory;document.getElementById("closetPreview").style.background=look.color;document.querySelectorAll("[data-look]").forEach(b=>b.classList.toggle("selected",b.dataset.look===selectedLook));document.querySelectorAll("[data-accessory]").forEach(b=>b.classList.toggle("selected",b.dataset.accessory===selectedAccessory))};
+ document.getElementById("outfitChoices").innerHTML=looks.map(l=>`<button class="look-option ${l.id===selectedLook?'selected':''}" data-look="${l.id}"><div class="big">${l.emoji}</div><b>${l.name}</b><p class="tiny">${l.desc}</p></button>`).join("");
+ document.getElementById("accessoryChoices").innerHTML=accessories.map(a=>`<button class="sticker ${a===selectedAccessory?'selected':''}" data-accessory="${a}">${a}</button>`).join("");
+ document.querySelectorAll("[data-look]").forEach(b=>b.onclick=()=>{selectedLook=b.dataset.look;draw()});
+ document.querySelectorAll("[data-accessory]").forEach(b=>b.onclick=()=>{selectedAccessory=b.dataset.accessory;draw()});
+ person.onchange=()=>{const s=savedLooks[Number(person.value)]||{look:"princess",accessory:"🦋"};selectedLook=s.look;selectedAccessory=s.accessory;draw()};
+ document.getElementById("saveLook").onclick=()=>{savedLooks[Number(person.value)]={look:selectedLook,accessory:selectedAccessory};put("looks",savedLooks);document.getElementById("lookSaved").textContent="Look salvo com sucesso! ✨";draw()};
+ draw();
+}
+function renderGifts(){
+ fillPeopleSelect("giftFrom");fillPeopleSelect("giftTo");
+ const from=document.getElementById("giftFrom"),to=document.getElementById("giftTo");from.value=String(current);to.value=String((current+1)%3);
+ document.getElementById("giftChoices").innerHTML=giftsList.map((g,i)=>`<button class="gift-option ${i===0?'selected':''}" data-gift="${g.id}"><div class="big" style="font-size:30px">${g.emoji}</div><b>${g.name}</b></button>`).join("");
+ let chosen="flower";document.querySelectorAll("[data-gift]").forEach(b=>b.onclick=()=>{chosen=b.dataset.gift;document.querySelectorAll("[data-gift]").forEach(x=>x.classList.toggle("selected",x.dataset.gift===chosen))});
+ document.getElementById("sendGift").onclick=()=>{if(from.value===to.value){document.getElementById("giftFeedback").textContent="Escolha outra bestie para receber o mimo 💗";return}const g=giftsList.find(x=>x.id===chosen);gifts.unshift({from:Number(from.value),to:Number(to.value),gift:chosen,note:document.getElementById("giftNote").value.trim(),date:new Date().toLocaleDateString("pt-BR")});put("gifts",gifts);document.getElementById("giftNote").value="";document.getElementById("giftFeedback").textContent=`${g.emoji} Presentinho preparado com carinho!`;renderGiftHistory();renderMedals()};
+ renderGiftHistory();renderMedals();
+}
+function renderGiftHistory(){
+ const el=document.getElementById("giftHistory");if(!gifts.length){el.innerHTML='<div class="empty">🎁<br>Os primeiros mimos ainda estão esperando!</div>';return}
+ el.innerHTML=gifts.slice(0,30).map(g=>{const item=giftsList.find(x=>x.id===g.gift)||giftsList[0];return `<div class="gift-entry"><div class="gift-emoji">${item.emoji}</div><div><b>${esc(friends[g.from]?.name||"Bestie")} → ${esc(friends[g.to]?.name||"Bestie")}</b><div class="tiny">${item.name} • ${esc(g.date)}</div>${g.note?`<div>${esc(g.note)}</div>`:""}</div></div>`}).join("");
+}
+function renderMedals(){
+ const count=gifts.length, unique=new Set(gifts.map(g=>g.gift)).size;
+ const medals=[{emoji:"🌱",name:"Primeiro carinho",desc:"Envie seu primeiro presentinho",ok:count>=1},{emoji:"💌",name:"Correio do amor",desc:"Envie 3 presentinhos",ok:count>=3},{emoji:"🎀",name:"Colecionadora kawaii",desc:"Experimente 3 tipos de presente",ok:unique>=3},{emoji:"🦋",name:"Trio unido",desc:"Guarde 5 presentinhos no total",ok:count>=5},{emoji:"🏆",name:"Amizade lendária",desc:"Envie 10 presentinhos",ok:count>=10},{emoji:"💖",name:"Coração generoso",desc:"Envie um mimo para cada amiga",ok:new Set(gifts.map(g=>g.to)).size>=2}];
+ document.getElementById("medalGrid").innerHTML=medals.map(m=>`<div class="medal" style="opacity:${m.ok?1:.55}"><div class="big">${m.ok?m.emoji:"🔒"}</div><b>${m.name}</b><p class="tiny">${m.desc}</p><small>${m.ok?"Desbloqueada! ✨":"Ainda bloqueada"}</small></div>`).join("");
+}
+
+renderFriends();renderMessages();
+document.querySelectorAll("[data-enter]").forEach(b=>b.onclick=()=>{
+ current=Number(b.dataset.enter);put("current",current);renderFriends();renderMessages();
+ document.getElementById("entryScreen").classList.add("hidden");
+});
+</script>
+<script>
+if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {}));
+}
+</script>
+</body>
+</html>
